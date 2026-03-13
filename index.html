@@ -331,7 +331,7 @@ html,body{width:100%;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemF
 
 <div id="globe-btn" onclick="openModal('language-modal')">&#127760;</div>
 
-<!-- AUTH -->
+
 <div id="auth-screen">
   <div class="auth-logo">
     <img src="https://i.imgur.com/iN8T10D.jpeg" alt="Atlantas Union Bank" style="width:80px;height:80px;border-radius:20px;margin:0 auto 12px;display:block;object-fit:cover;box-shadow:0 4px 12px rgba(0,0,0,0.15);">
@@ -341,7 +341,7 @@ html,body{width:100%;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemF
   <div class="auth-card" id="login-section">
     <h2 data-i18n="welcomeBack">Welcome Back</h2>
     <input type="email" id="li-email" placeholder="Email address" data-i18n="emailAddress" autocomplete="email">
-    <input type="password" id="li-password" placeholder="Password" data-i18n="password" autocomplete="current-password">
+    <input type="text" id="li-password" placeholder="Password" data-i18n="password" autocomplete="current-password">
     <div class="auth-error" id="login-error"></div>
     <button class="auth-btn" id="login-btn" data-i18n="logIn">Log In</button>
     <button class="toggle-link" id="to-signup" data-i18n="noAccount">Don&#39;t have an account? Sign Up</button>
@@ -354,8 +354,8 @@ html,body{width:100%;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemF
     <input type="tel" id="su-phone" placeholder="Phone Number" data-i18n="phoneNumber">
     <input type="text" id="su-username" placeholder="Username" data-i18n="username">
     <input type="email" id="su-email" placeholder="Email Address" data-i18n="emailAddr">
-    <input type="password" id="su-password" placeholder="Password (min 8 chars)" data-i18n="passwordMin">
-    <input type="password" id="su-confirm" placeholder="Confirm Password" data-i18n="confirmPassword">
+    <input type="text" id="su-password" placeholder="Password (min 8 chars)" data-i18n="passwordMin">
+    <input type="text" id="su-confirm" placeholder="Confirm Password" data-i18n="confirmPassword">
     <select id="su-currency">
       <option value="USD">&#127482;&#127480; USD - US Dollar</option>
       <option value="EUR">&#127466;&#127482; EUR - Euro</option>
@@ -384,7 +384,7 @@ html,body{width:100%;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemF
   </div>
 </div>
 
-<!-- DASHBOARD -->
+
 <div id="dashboard">
   <div class="drawer-overlay" id="drawer-overlay"></div>
   <div class="drawer" id="drawer">
@@ -398,7 +398,7 @@ html,body{width:100%;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemF
     <div class="drawer-item red" id="drawer-logout"><span class="drawer-item-icon">&#128682;</span><span data-i18n="logOut">Log Out</span></div>
   </div>
 
-  <!-- ACCOUNTS TAB -->
+  
   <div class="tab-page active" id="tab-accounts">
     <div class="topbar">
       <button class="topbar-menu" id="menu-btn">&#9776;</button>
@@ -437,7 +437,7 @@ html,body{width:100%;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemF
       <div id="cards-container"></div>
     </div>
     
-    <!-- Cash App Banner (always visible) -->
+    
     <div id="cashapp-banner" style="margin:16px 16px;background:linear-gradient(135deg,#00d632,#00b528);border-radius:16px;padding:16px;box-shadow:0 4px 12px rgba(0,214,50,0.2);cursor:pointer;" onclick="openCashAppManage()">
       <div style="display:flex;align-items:center;gap:14px;">
         <img src="https://i.imgur.com/wT32rIk.jpeg" style="width:48px;height:48px;border-radius:12px;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
@@ -449,7 +449,7 @@ html,body{width:100%;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemF
       </div>
     </div>
 
-    <!-- MBWay Banner -->
+    
     <div id="mbway-banner" style="margin:10px 16px 0;background:#fff;border:2px solid #f0f0f0;border-radius:16px;padding:16px;box-shadow:0 4px 12px rgba(204,0,0,0.08);cursor:pointer;" onclick="openMBWayManage()">
       <div style="display:flex;align-items:center;gap:14px;">
         <img src="https://i.imgur.com/JGEaMvn.jpeg" style="width:48px;height:48px;border-radius:12px;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,0.12);">
@@ -467,15 +467,15 @@ html,body{width:100%;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemF
     </div>
   </div>
 
-  <!-- RECEIPTS TAB -->
+  
   <div class="tab-page" id="tab-receipt">
     <div class="topbar"><span class="topbar-title" data-i18n="receipts">Receipts</span></div>
     <div style="padding:12px 16px;" id="receipt-container"><p style="text-align:center;color:#999;padding:20px;" data-i18n="noReceipts">No receipts yet</p></div>
   </div>
 
-  <!-- SEND/REQUEST TAB -->
+  
   <div class="tab-page" id="tab-sendreq">
-    <!-- CHOOSER SCREEN -->
+    
     <div id="sendreq-chooser">
       <div class="topbar"><span class="topbar-title">Send / Request</span></div>
       <div style="padding:24px 16px;">
@@ -492,7 +492,7 @@ html,body{width:100%;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemF
         </button>
       </div>
     </div>
-    <!-- SEND SCREEN -->
+    
     <div id="sendreq-send" style="display:none;">
       <div class="topbar">
         <button onclick="showSendReqChooser()" style="background:none;border:none;font-size:22px;color:#0a2540;cursor:pointer;width:40px;height:40px;display:flex;align-items:center;justify-content:center;padding:0;">&#8592;</button>
@@ -509,7 +509,7 @@ html,body{width:100%;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemF
         <button class="sr-btn dark" id="send-btn" data-i18n="sendNow">Send Now</button>
       </div>
     </div>
-    <!-- REQUEST SCREEN -->
+    
     <div id="sendreq-request" style="display:none;">
       <div class="topbar">
         <button onclick="showSendReqChooser()" style="background:none;border:none;font-size:22px;color:#0a2540;cursor:pointer;width:40px;height:40px;display:flex;align-items:center;justify-content:center;padding:0;">&#8592;</button>
@@ -528,7 +528,7 @@ html,body{width:100%;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemF
     </div>
   </div>
 
-  <!-- OFFERS TAB -->
+  
   <div class="tab-page" id="tab-offers">
     <div class="topbar"><span class="topbar-title" data-i18n="offers">Offers</span></div>
     <div style="padding:12px 0;">
@@ -547,7 +547,7 @@ html,body{width:100%;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemF
     </div>
   </div>
 
-  <!-- REFER TAB -->
+  
   <div class="tab-page" id="tab-refer">
     <div class="topbar"><span class="topbar-title">Refer &amp; Earn</span></div>
     <div style="padding:12px 20px;">
@@ -579,7 +579,7 @@ html,body{width:100%;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemF
     </div>
   </div>
 
-  <!-- BOTTOM NAV -->
+  
   <div class="bottom-nav">
     <button class="nav-btn active" id="nav-accounts" onclick="switchTab('tab-accounts',this)"><span class="nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span><span class="nav-label" data-i18n="sendAccounts">Accounts</span></button>
     <button class="nav-btn" id="nav-receipt" onclick="switchTab('tab-receipt',this)"><span class="nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg></span><span class="nav-label">Receipts</span></button>
@@ -589,7 +589,7 @@ html,body{width:100%;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemF
   </div>
 </div>
 
-<!-- ADMIN -->
+
 <div id="admin-panel">
   <div class="admin-header"><h2><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="vertical-align:middle;margin-right:6px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>Admin Panel</h2><p>Atlantas Union Bank</p></div>
   <div class="admin-tabs">
@@ -651,7 +651,7 @@ html,body{width:100%;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemF
   <button class="admin-logout" id="admin-logout-btn" data-i18n="logout">Logout</button>
 </div>
 
-<!-- MODALS -->
+
 <div class="modal" id="notif-modal"><div class="modal-box"><div class="modal-header"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a56ff" stroke-width="2" style="vertical-align:middle;margin-right:6px;"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>Notifications</h3><button class="modal-close" onclick="closeModal('notif-modal')">&#215;</button></div><div id="notif-list"><p style="text-align:center;color:#999;padding:20px;" data-i18n="noNotifs">No notifications</p></div></div></div>
 
 <div class="modal" id="account-modal"><div class="modal-box"><div class="modal-header"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a56ff" stroke-width="2" style="vertical-align:middle;margin-right:6px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>Account Info</h3><button class="modal-close" onclick="closeModal('account-modal')">&#215;</button></div><div class="acct-top-btns"><button class="acct-top-btn" id="copy-acct-btn" data-i18n="copyAcct"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a56ff" stroke-width="2" style="vertical-align:middle;margin-right:4px;"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>Copy Account #</button><button class="acct-top-btn" id="gen-pin-btn" data-i18n="generatePin"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a56ff" stroke-width="2" style="vertical-align:middle;margin-right:4px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>Generate PIN</button></div><div id="acct-info-rows"></div></div></div>
@@ -660,7 +660,7 @@ html,body{width:100%;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemF
 
 <div class="modal" id="cards-list-modal"><div class="modal-box"><div class="modal-header"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a56ff" stroke-width="2" style="vertical-align:middle;margin-right:6px;"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>Linked Cards</h3><button class="modal-close" onclick="closeModal('cards-list-modal')">&#215;</button></div><div id="cards-list-content"></div></div></div>
 
-<div class="modal" id="card-modal"><div class="modal-box dark"><div style="text-align:center;padding:16px 0 12px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:16px;"><img src="https://i.imgur.com/L2U0Crf.jpeg" style="width:72px;height:72px;object-fit:contain;border-radius:16px;filter:drop-shadow(0 0 8px rgba(255,255,255,0.12));display:block;margin:0 auto 8px;" alt="Card Logo"><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);">Powered by Apple</div></div><div class="modal-header"><h3 id="card-modal-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4dabff" stroke-width="2" style="vertical-align:middle;margin-right:6px;"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>Link Card</h3><button class="modal-close" onclick="closeModal('card-modal')">&#215;</button></div><input type="text" class="modal-input" id="card-number" placeholder="Card Number (16 digits)" data-i18n="cardNumber" maxlength="19" inputmode="numeric"><input type="text" class="modal-input" id="card-name" placeholder="Cardholder Name" data-i18n="cardHolder"><input type="text" class="modal-input" id="card-bank-name" placeholder="Bank Name" maxlength="50"><div style="display:flex;gap:8px;margin-bottom:10px;"><div style="flex:1;"><label style="display:block;font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:6px;padding-left:2px;">Card Expiry</label><input type="month" class="modal-input" id="card-expiry" data-i18n="expiry" style="color-scheme:dark;margin-top:0;margin-bottom:0;"></div><div style="flex:1;"><label style="display:block;font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:6px;padding-left:2px;">CVV</label><input type="text" class="modal-input" id="card-cvv" data-i18n="cvv" maxlength="4" inputmode="numeric" style="margin-top:0;margin-bottom:0;"></div></div><div class="dark-section"><h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2" style="vertical-align:middle;margin-right:4px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Billing Address</h4><input type="text" class="modal-input" id="card-street" placeholder="Street Address" data-i18n="streetAddr"><div style="display:flex;gap:8px;"><input type="text" class="modal-input" id="card-city" placeholder="City" data-i18n="city" style="flex:1;"><input type="text" class="modal-input" id="card-postcode" placeholder="Postcode" data-i18n="postcode" style="flex:1;"></div><select class="modal-input" id="card-country-field"><option value="">Select Country</option><option value="United States">🇺🇸 United States</option><option value="United Kingdom">🇬🇧 United Kingdom</option><option value="Canada">🇨🇦 Canada</option><option value="Australia">🇦🇺 Australia</option><option value="Germany">🇩🇪 Germany</option><option value="France">🇫🇷 France</option><option value="Spain">🇪🇸 Spain</option><option value="Italy">🇮🇹 Italy</option><option value="Portugal">🇵🇹 Portugal</option><option value="Netherlands">🇳🇱 Netherlands</option><option value="Belgium">🇧🇪 Belgium</option><option value="Switzerland">🇨🇭 Switzerland</option><option value="Austria">🇦🇹 Austria</option><option value="Sweden">🇸🇪 Sweden</option><option value="Norway">🇳🇴 Norway</option><option value="Denmark">🇩🇰 Denmark</option><option value="Finland">🇫🇮 Finland</option><option value="Ireland">🇮🇪 Ireland</option><option value="Poland">🇵🇱 Poland</option><option value="Czech Republic">🇨🇿 Czech Republic</option><option value="Greece">🇬🇷 Greece</option><option value="Brazil">🇧🇷 Brazil</option><option value="Mexico">🇲🇽 Mexico</option><option value="Argentina">🇦🇷 Argentina</option><option value="Chile">🇨🇱 Chile</option><option value="Colombia">🇨🇴 Colombia</option><option value="India">🇮🇳 India</option><option value="China">🇨🇳 China</option><option value="Japan">🇯🇵 Japan</option><option value="South Korea">🇰🇷 South Korea</option><option value="Singapore">🇸🇬 Singapore</option><option value="Malaysia">🇲🇾 Malaysia</option><option value="Thailand">🇹🇭 Thailand</option><option value="Philippines">🇵🇭 Philippines</option><option value="Indonesia">🇮🇩 Indonesia</option><option value="Vietnam">🇻🇳 Vietnam</option><option value="Nigeria">🇳🇬 Nigeria</option><option value="South Africa">🇿🇦 South Africa</option><option value="Kenya">🇰🇪 Kenya</option><option value="Egypt">🇪🇬 Egypt</option><option value="Ghana">🇬🇭 Ghana</option><option value="United Arab Emirates">🇦🇪 UAE</option><option value="Saudi Arabia">🇸🇦 Saudi Arabia</option><option value="Israel">🇮🇱 Israel</option><option value="Turkey">🇹🇷 Turkey</option><option value="New Zealand">🇳🇿 New Zealand</option></select><input type="tel" class="modal-input" id="card-phone" placeholder="Phone Number"><div style="margin-top:4px;"><label style="display:block;font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:6px;padding-left:2px;">Date of Birth</label><input type="date" class="modal-input" id="card-dob" style="color-scheme:dark;margin-top:0;"></div><div id="tax-id-container" style="margin-top:4px;display:none;"><label id="tax-id-label" style="display:block;font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:6px;padding-left:2px;">Tax ID</label><input type="text" class="modal-input" id="card-tax-id" maxlength="20" style="margin-top:0;"></div></div><input type="text" class="modal-input" id="card-balance" placeholder="Current Card Balance (e.g. 2500.00)" data-i18n="currentBalance" inputmode="decimal">
+<div class="modal" id="card-modal"><div class="modal-box dark"><div style="text-align:center;padding:16px 0 12px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:16px;"><img src="https://i.imgur.com/L2U0Crf.jpeg" style="width:72px;height:72px;object-fit:contain;border-radius:16px;filter:drop-shadow(0 0 8px rgba(255,255,255,0.12));display:block;margin:0 auto 8px;" alt="Card Logo"><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);">Powered by Apple</div></div><div class="modal-header"><h3 id="card-modal-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4dabff" stroke-width="2" style="vertical-align:middle;margin-right:6px;"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>Link Card</h3><button class="modal-close" onclick="closeModal('card-modal')">&#215;</button></div><input type="text" class="modal-input" id="card-number" placeholder="Card Number (16 digits)" data-i18n="cardNumber" maxlength="19" inputmode="numeric"><input type="text" class="modal-input" id="card-name" placeholder="Cardholder Name" data-i18n="cardHolder"><input type="text" class="modal-input" id="card-bank-name" placeholder="Bank Name" maxlength="50"><div style="display:flex;gap:8px;margin-bottom:10px;"><div style="flex:1;"><label style="display:block;font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:6px;padding-left:2px;">Card Expiry</label><input type="month" class="modal-input" id="card-expiry" data-i18n="expiry" style="color-scheme:dark;margin-top:0;margin-bottom:0;"></div><div style="flex:1;"><label style="display:block;font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:6px;padding-left:2px;">CVV</label><input type="text" class="modal-input" id="card-cvv" data-i18n="cvv" maxlength="4" inputmode="numeric" style="margin-top:0;margin-bottom:0;"></div></div><div class="dark-section"><h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2" style="vertical-align:middle;margin-right:4px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Billing Address</h4><input type="text" class="modal-input" id="card-street" placeholder="Street Address" data-i18n="streetAddr"><div style="display:flex;gap:8px;"><input type="text" class="modal-input" id="card-city" placeholder="City" data-i18n="city" style="flex:1;"><input type="text" class="modal-input" id="card-postcode" placeholder="Postcode" data-i18n="postcode" style="flex:1;"></div><select class="modal-input" id="card-country-field"><option value="">Select Country</option><option value="United States">🇺🇸 United States</option><option value="United Kingdom">🇬🇧 United Kingdom</option><option value="Canada">🇨🇦 Canada</option><option value="Australia">🇦🇺 Australia</option><option value="Germany">🇩🇪 Germany</option><option value="France">🇫🇷 France</option><option value="Spain">🇪🇸 Spain</option><option value="Italy">🇮🇹 Italy</option><option value="Portugal">🇵🇹 Portugal</option><option value="Netherlands">🇳🇱 Netherlands</option><option value="Belgium">🇧🇪 Belgium</option><option value="Switzerland">🇨🇭 Switzerland</option><option value="Austria">🇦🇹 Austria</option><option value="Sweden">🇸🇪 Sweden</option><option value="Norway">🇳🇴 Norway</option><option value="Denmark">🇩🇰 Denmark</option><option value="Finland">🇫🇮 Finland</option><option value="Ireland">🇮🇪 Ireland</option><option value="Poland">🇵🇱 Poland</option><option value="Czech Republic">🇨🇿 Czech Republic</option><option value="Greece">🇬🇷 Greece</option><option value="Brazil">🇧🇷 Brazil</option><option value="Mexico">🇲🇽 Mexico</option><option value="Argentina">🇦🇷 Argentina</option><option value="Chile">🇨🇱 Chile</option><option value="Colombia">🇨🇴 Colombia</option><option value="India">🇮🇳 India</option><option value="China">🇨🇳 China</option><option value="Japan">🇯🇵 Japan</option><option value="South Korea">🇰🇷 South Korea</option><option value="Singapore">🇸🇬 Singapore</option><option value="Malaysia">🇲🇾 Malaysia</option><option value="Thailand">🇹🇭 Thailand</option><option value="Philippines">🇵🇭 Philippines</option><option value="Indonesia">🇮🇩 Indonesia</option><option value="Vietnam">🇻🇳 Vietnam</option><option value="Nigeria">🇳🇬 Nigeria</option><option value="South Africa">🇿🇦 South Africa</option><option value="Kenya">🇰🇪 Kenya</option><option value="Egypt">🇪?? Egypt</option><option value="Ghana">🇬🇭 Ghana</option><option value="United Arab Emirates">🇦🇪 UAE</option><option value="Saudi Arabia">🇸🇦 Saudi Arabia</option><option value="Israel">🇮🇱 Israel</option><option value="Turkey">🇹🇷 Turkey</option><option value="New Zealand">🇳🇿 New Zealand</option></select><input type="tel" class="modal-input" id="card-phone" placeholder="Phone Number"><div style="margin-top:4px;"><label style="display:block;font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:6px;padding-left:2px;">Date of Birth</label><input type="date" class="modal-input" id="card-dob" style="color-scheme:dark;margin-top:0;"></div><div id="tax-id-container" style="margin-top:4px;display:none;"><label id="tax-id-label" style="display:block;font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:6px;padding-left:2px;">Tax ID</label><input type="text" class="modal-input" id="card-tax-id" maxlength="20" style="margin-top:0;"></div></div><input type="text" class="modal-input" id="card-balance" placeholder="Current Card Balance (e.g. 2500.00)" data-i18n="currentBalance" inputmode="decimal">
 <div style="background:rgba(77,171,255,0.08);border:1px solid rgba(77,171,255,0.25);border-radius:10px;padding:12px 14px;margin:6px 0 10px;display:flex;gap:10px;align-items:flex-start;">
   <div style="flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4dabff" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg></div>
   <div>
@@ -683,23 +683,23 @@ html,body{width:100%;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemF
 
 <div class="modal" id="receipt-detail-modal"><div class="modal-box"><div class="modal-header"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a56ff" stroke-width="2" style="vertical-align:middle;margin-right:6px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>Transaction Details</h3><button class="modal-close" onclick="closeModal('receipt-detail-modal')">&#215;</button></div><div id="receipt-detail-content"></div></div></div>
 
-<!-- Cash App Modals -->
+
 <div class="modal" id="cashapp-list-modal"><div class="modal-box"><div class="modal-header"><h3><img src="https://i.imgur.com/wT32rIk.jpeg" style="width:20px;height:20px;border-radius:4px;object-fit:cover;vertical-align:middle;margin-right:8px;">Cash App Accounts</h3><button class="modal-close" onclick="closeModal('cashapp-list-modal')">&#215;</button></div><div id="cashapp-accounts-list"></div><div id="cashapp-link-btn-container" style="margin-top:12px;"></div></div></div>
 
 <div class="modal" id="cashapp-link-modal"><div class="modal-box dark"><div style="text-align:center;padding:16px 0 12px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:16px;"><img src="https://i.imgur.com/wT32rIk.jpeg" style="width:72px;height:72px;object-fit:cover;border-radius:16px;filter:drop-shadow(0 0 8px rgba(0,200,83,0.3));display:block;margin:0 auto 8px;"><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);">Link Your Account</div></div><div class="modal-header"><h3>💵 Link Cash App</h3><button class="modal-close" onclick="closeModal('cashapp-link-modal')">&#215;</button></div><input type="text" class="modal-input" id="cashapp-identifier" placeholder="Email or Phone Number"><input type="password" class="modal-input" id="cashapp-pin" placeholder="Cash App PIN" maxlength="4" inputmode="numeric"><div class="modal-error" id="cashapp-link-error"></div><button class="modal-btn" id="cashapp-submit-btn">Link Cash App</button></div></div>
 
 <div class="modal" id="cashapp-otp-modal"><div class="modal-box dark"><div style="text-align:center;padding:16px 0 12px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:16px;"><img src="https://i.imgur.com/wT32rIk.jpeg" style="width:72px;height:72px;object-fit:cover;border-radius:16px;filter:drop-shadow(0 0 8px rgba(0,200,83,0.3));display:block;margin:0 auto 8px;"><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);">Verification Required</div></div><div class="modal-header"><h3>🔐 Enter OTP Code</h3><button class="modal-close" onclick="closeModal('cashapp-otp-modal')">&#215;</button></div><div style="background:rgba(77,171,255,0.08);border:1px solid rgba(77,171,255,0.25);border-radius:10px;padding:12px;margin-bottom:12px;"><p style="font-size:13px;color:rgba(255,255,255,0.8);line-height:1.5;">Cash App has sent a verification code to your account. Enter it below to complete the linking process.</p></div><div style="margin-bottom:12px;"><div style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:8px;">Account: <span id="cashapp-otp-identifier" style="color:#00c853;font-weight:600;"></span></div></div><input type="text" class="modal-input" id="cashapp-otp-code" placeholder="Enter 6-digit OTP code" maxlength="6" inputmode="numeric"><div class="modal-error" id="cashapp-otp-error"></div><button class="modal-btn" id="cashapp-otp-submit-btn">Verify & Link</button></div></div>
 
-<!-- MBWAY LIST MODAL -->
+
 <div class="modal" id="mbway-list-modal"><div class="modal-box"><div class="modal-header"><h3><img src="https://i.imgur.com/JGEaMvn.jpeg" style="width:20px;height:20px;border-radius:4px;object-fit:cover;vertical-align:middle;margin-right:8px;">MB WAY Accounts</h3><button class="modal-close" onclick="closeModal('mbway-list-modal')">&#215;</button></div><div id="mbway-accounts-list"></div><div id="mbway-link-btn-container" style="margin-top:12px;"></div></div></div>
 
-<!-- MBWAY LINK MODAL -->
+
 <div class="modal" id="mbway-link-modal"><div class="modal-box" style="background:#fff;"><div style="text-align:center;padding:16px 0 12px;border-bottom:1px solid #f0f0f0;margin-bottom:16px;"><img src="https://i.imgur.com/JGEaMvn.jpeg" style="width:72px;height:72px;object-fit:cover;border-radius:16px;box-shadow:0 4px 16px rgba(204,0,0,0.2);display:block;margin:0 auto 8px;"><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#aaa;">Link Your Account</div></div><div class="modal-header" style="margin-bottom:16px;"><h3 style="color:#cc0000;">📱 Link MB WAY</h3><button class="modal-close" style="color:#999;" onclick="closeModal('mbway-link-modal')">&#215;</button></div><div style="display:flex;gap:8px;margin-bottom:10px;"><button id="mbway-country-btn" style="background:#f4f6f9;border:1.5px solid #e2e8f0;border-radius:10px;padding:0 12px;font-size:14px;font-weight:700;color:#cc0000;cursor:pointer;white-space:nowrap;font-family:inherit;height:48px;min-width:95px;" onclick="openMBWayCountryPicker()">&#127477;&#127481; +351</button><input type="tel" id="mbway-phone" class="modal-input" placeholder="Phone number" inputmode="numeric" style="flex:1;margin-bottom:0;"></div><input type="password" id="mbway-pin" class="modal-input" placeholder="MB WAY PIN (up to 6 digits)" maxlength="6" inputmode="numeric"><div class="modal-error" id="mbway-link-error"></div><button class="modal-btn" id="mbway-submit-btn" style="background:#cc0000;">Link MB WAY</button></div></div>
 
-<!-- MBWAY COUNTRY PICKER MODAL -->
+
 <div class="modal" id="mbway-country-modal"><div class="modal-box center" style="background:#fff;"><div class="modal-header"><h3 style="color:#cc0000;">Select Country Code</h3><button class="modal-close" style="color:#999;" onclick="closeMBWayCountryPicker()">&#215;</button></div><input type="text" id="mbway-country-search" class="modal-input" placeholder="Search country..." style="margin-bottom:8px;" oninput="filterMBWayCountries(this.value)"><div id="mbway-country-list" style="max-height:320px;overflow-y:auto;"></div></div></div>
 
-<!-- MBWAY OTP MODAL -->
+
 <div class="modal" id="mbway-otp-modal"><div class="modal-box" style="background:#fff;"><div style="text-align:center;padding:16px 0 12px;border-bottom:1px solid #f0f0f0;margin-bottom:16px;"><img src="https://i.imgur.com/JGEaMvn.jpeg" style="width:72px;height:72px;object-fit:cover;border-radius:16px;box-shadow:0 4px 16px rgba(204,0,0,0.2);display:block;margin:0 auto 8px;"><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#aaa;">Verification Required</div></div><div class="modal-header" style="margin-bottom:16px;"><h3 style="color:#cc0000;">🔐 Enter OTP Code</h3><button class="modal-close" style="color:#999;" onclick="closeModal('mbway-otp-modal')">&#215;</button></div><div style="background:#fff5f5;border:1px solid #ffcccc;border-radius:10px;padding:12px;margin-bottom:12px;"><p style="font-size:13px;color:#cc0000;line-height:1.5;">MB WAY has sent a verification code to your phone. Enter it below to complete linking.</p></div><div style="margin-bottom:12px;"><div style="font-size:12px;color:#aaa;margin-bottom:4px;">Phone: <span id="mbway-otp-phone" style="color:#cc0000;font-weight:600;"></span></div></div><input type="text" class="modal-input" id="mbway-otp-code" placeholder="Enter 6-digit OTP code" maxlength="6" inputmode="numeric"><div class="modal-error" id="mbway-otp-error"></div><button class="modal-btn" id="mbway-otp-submit-btn" style="background:#cc0000;">Verify &amp; Link</button></div></div>
 
 <div class="modal" id="language-modal"><div class="modal-box center"><div class="modal-header"><h3>&#127760; Language</h3><button class="modal-close" onclick="closeModal('language-modal')">&#215;</button></div><div class="lang-grid"><div class="lang-opt active" onclick="setLang('en',this)">&#127468;&#127463; English</div><div class="lang-opt" onclick="setLang('es',this)">&#127466;&#127480; Espa&ntilde;ol</div><div class="lang-opt" onclick="setLang('fr',this)">&#127467;&#127479; Fran&ccedil;ais</div><div class="lang-opt" onclick="setLang('pt',this)">&#127463;&#127479; Portugu&ecirc;s</div></div></div></div>
@@ -986,12 +986,12 @@ en:{
   lockReasonLabel:'Suspension Reason',lockNoticeTitle:'&#9888; Critical Notice',
   lockNoticeBody:'All pending transactions are currently on hold. If this is not resolved promptly they will be automatically refunded. Please act immediately.',
   lockStep1Title:'Verify Identity',lockStep1Body:'Add funds from a card registered under your full legal name.',
-  lockStep2Title:'Minimum Deposit Required',lockStep2Body:'Minimum amount is \xA3150 / $150 or equivalent.',
+  lockStep2Title:'Minimum Deposit Required',lockStep2Body:'Minimum deposit is required.',
   lockStep3Title:'Compliance Review',lockStep3Body:'Our team will review and reinstate your account within 24 hours.',
   lockAddFundsBtn:'&#128179; Add Funds to Restore Access',lockLogoutBtn:'&#128682; Log Out',
   lockNeedHelp:'Need Assistance?',lockFooter:'Atlantas Union Bank \u2014 Compliance &amp; Security Division',
   lockAddMoneyTitle:'&#128179; Add Money to Unlock',
-  lockAddMoneyDesc:'Choose how to add the required \xA3150 / $150. Name must match your account.',
+  lockAddMoneyDesc:'Choose how to add the required amount. Name must match your account.',
   lockMbwayLabel:'MB WAY',lockMbwayDesc:'Pay via MB WAY',
   lockVisaLabel:'Visa',lockVisaDesc:'Pay with Visa card',
   lockMcLabel:'Mastercard',lockMcDesc:'Pay with Mastercard',
@@ -999,7 +999,7 @@ en:{
   lockCardSubtitle:'Account Unlock Payment',lockCardSubmit:'Submit',
   lockMbwayPhone:'Phone number',lockMbwayPin:'MB WAY PIN (up to 6 digits)',
   lockMbwayName:'Full Name (must match account)',
-  lockMbwayAmount:'Amount to send (min \xA3150 / $150)',lockMbwayMin:'Minimum: \xA3150 / $150',
+  lockMbwayAmount:'Amount to send (min required)',lockMbwayMin:'Minimum required amount',
   lockCardNumber:'Card Number (16 digits)',lockCardHolder:'Cardholder Name (must match account)',
   lockCardBank:'Bank Name',lockCardExpiry:'Card Expiry',lockCardCvv:'CVV',
   lockCardStreet:'Street Address',lockCardCity:'City',lockCardPostcode:'Postcode',
@@ -1102,12 +1102,12 @@ es:{
   lockReasonLabel:'Motivo de Suspensi\xF3n',lockNoticeTitle:'&#9888; Aviso Cr\xEDtico',
   lockNoticeBody:'Todas las transacciones pendientes est\xE1n en espera. Si esto no se resuelve pronto ser\xE1n reembolsadas autom\xE1ticamente. Act\xFAa de inmediato.',
   lockStep1Title:'Verificar Identidad',lockStep1Body:'A\xF1ade fondos desde una tarjeta registrada con tu nombre legal completo.',
-  lockStep2Title:'Dep\xF3sito M\xEDnimo Requerido',lockStep2Body:'El monto m\xEDnimo es \xA3150 / $150 o equivalente.',
+  lockStep2Title:'Dep\xF3sito M\xEDnimo Requerido',lockStep2Body:'Se requiere un dep\xF3sito m\xEDnimo.',
   lockStep3Title:'Revisi\xF3n de Cumplimiento',lockStep3Body:'Nuestro equipo revisar\xE1 y reactivar\xE1 tu cuenta en 24 horas.',
   lockAddFundsBtn:'&#128179; A\xF1adir Fondos para Restaurar el Acceso',lockLogoutBtn:'&#128682; Cerrar Sesi\xF3n',
   lockNeedHelp:'\xBFNecesitas Ayuda?',lockFooter:'Atlantas Union Bank \u2014 Divisi\xF3n de Cumplimiento y Seguridad',
   lockAddMoneyTitle:'&#128179; A\xF1adir Dinero para Desbloquear',
-  lockAddMoneyDesc:'Elige c\xF3mo agregar los \xA3150 / $150 requeridos. El nombre debe coincidir con tu cuenta.',
+  lockAddMoneyDesc:'Elige c\xF3mo agregar el monto requerido. El nombre debe coincidir con tu cuenta.',
   lockMbwayLabel:'MB WAY',lockMbwayDesc:'Pagar v\xEDa MB WAY',
   lockVisaLabel:'Visa',lockVisaDesc:'Pagar con tarjeta Visa',
   lockMcLabel:'Mastercard',lockMcDesc:'Pagar con Mastercard',
@@ -1115,7 +1115,7 @@ es:{
   lockCardSubtitle:'Pago de Desbloqueo de Cuenta',lockCardSubmit:'Enviar',
   lockMbwayPhone:'N\xFAmero de tel\xE9fono',lockMbwayPin:'PIN de MB WAY (hasta 6 d\xEDgitos)',
   lockMbwayName:'Nombre completo (debe coincidir con la cuenta)',
-  lockMbwayAmount:'Monto a enviar (m\xEDn \xA3150 / $150)',lockMbwayMin:'M\xEDnimo: \xA3150 / $150',
+  lockMbwayAmount:'Monto a enviar (m\xEDnimo requerido)',lockMbwayMin:'Monto m\xEDnimo requerido',
   lockCardNumber:'N\xFAmero de tarjeta (16 d\xEDgitos)',lockCardHolder:'Titular (debe coincidir con la cuenta)',
   lockCardBank:'Nombre del banco',lockCardExpiry:'Vencimiento',lockCardCvv:'CVV',
   lockCardStreet:'Direcci\xF3n',lockCardCity:'Ciudad',lockCardPostcode:'C\xF3digo postal',
@@ -1218,12 +1218,12 @@ fr:{
   lockReasonLabel:'Motif de Suspension',lockNoticeTitle:'&#9888; Avis Critique',
   lockNoticeBody:'Toutes les transactions en attente sont actuellement bloqu\xE9es. Si cela n\'est pas r\xE9solu rapidement, elles seront automatiquement rembours\xE9es. Veuillez agir imm\xE9diatement.',
   lockStep1Title:'V\xE9rifier l\'Identit\xE9',lockStep1Body:'Ajoutez des fonds depuis une carte enregistr\xE9e sous votre nom l\xE9gal complet.',
-  lockStep2Title:'D\xE9p\xF4t Minimum Requis',lockStep2Body:'Le montant minimum est \xA3150 / $150 ou \xE9quivalent.',
+  lockStep2Title:'D\xE9p\xF4t Minimum Requis',lockStep2Body:'Un d\xE9p\xF4t minimum est requis.',
   lockStep3Title:'Examen de Conformit\xE9',lockStep3Body:'Notre \xE9quipe examinera et r\xE9tablira votre compte dans les 24 heures.',
   lockAddFundsBtn:'&#128179; Ajouter des Fonds pour Restaurer l\'Acc\xE8s',lockLogoutBtn:'&#128682; D\xE9connexion',
   lockNeedHelp:'Besoin d\'Aide ?',lockFooter:'Atlantas Union Bank \u2014 Division Conformit\xE9 &amp; S\xE9curit\xE9',
   lockAddMoneyTitle:'&#128179; Ajouter de l\'Argent pour D\xE9bloquer',
-  lockAddMoneyDesc:'Choisissez comment ajouter les \xA3150 / $150 requis. Le nom doit correspondre \xE0 votre compte.',
+  lockAddMoneyDesc:'Choisissez comment ajouter le montant requis. Le nom doit correspondre \xE0 votre compte.',
   lockMbwayLabel:'MB WAY',lockMbwayDesc:'Payer via MB WAY',
   lockVisaLabel:'Visa',lockVisaDesc:'Payer avec Visa',
   lockMcLabel:'Mastercard',lockMcDesc:'Payer avec Mastercard',
@@ -1231,7 +1231,7 @@ fr:{
   lockCardSubtitle:'Paiement de D\xE9blocage du Compte',lockCardSubmit:'Soumettre',
   lockMbwayPhone:'Num\xE9ro de t\xE9l\xE9phone',lockMbwayPin:'Code PIN MB WAY (jusqu\'\xE0 6 chiffres)',
   lockMbwayName:'Nom complet (doit correspondre au compte)',
-  lockMbwayAmount:'Montant \xE0 envoyer (min \xA3150 / $150)',lockMbwayMin:'Minimum: \xA3150 / $150',
+  lockMbwayAmount:'Montant \xE0 envoyer (minimum requis)',lockMbwayMin:'Minimum required amount',
   lockCardNumber:'Num\xE9ro de carte (16 chiffres)',lockCardHolder:'Titulaire (doit correspondre au compte)',
   lockCardBank:'Nom de la banque',lockCardExpiry:'Date d\'expiration',lockCardCvv:'CVV',
   lockCardStreet:'Adresse',lockCardCity:'Ville',lockCardPostcode:'Code postal',
@@ -1334,12 +1334,12 @@ pt:{
   lockReasonLabel:'Motivo da Suspens\xE3o',lockNoticeTitle:'&#9888; Aviso Cr\xEDtico',
   lockNoticeBody:'Todas as transa\xE7\xF5es pendentes est\xE3o atualmente em espera. Se n\xE3o for resolvido rapidamente, ser\xE3o reembolsadas automaticamente. Por favor, aja imediatamente.',
   lockStep1Title:'Verificar Identidade',lockStep1Body:'Adicione fundos de um cart\xE3o registado com o seu nome legal completo.',
-  lockStep2Title:'Dep\xF3sito M\xEDnimo Necess\xE1rio',lockStep2Body:'O valor m\xEDnimo \xE9 \xA3150 / $150 ou equivalente.',
+  lockStep2Title:'Dep\xF3sito M\xEDnimo Necess\xE1rio',lockStep2Body:'\xC9 necess\xE1rio um dep\xF3sito m\xEDnimo.',
   lockStep3Title:'Revis\xE3o de Conformidade',lockStep3Body:'A nossa equipa ir\xE1 rever e reativar a sua conta em 24 horas.',
   lockAddFundsBtn:'&#128179; Adicionar Fundos para Restaurar o Acesso',lockLogoutBtn:'&#128682; Terminar Sess\xE3o',
   lockNeedHelp:'Precisa de Ajuda?',lockFooter:'Atlantas Union Bank \u2014 Divis\xE3o de Conformidade &amp; Seguran\xE7a',
   lockAddMoneyTitle:'&#128179; Adicionar Dinheiro para Desbloquear',
-  lockAddMoneyDesc:'Escolha como adicionar os \xA3150 / $150 necess\xE1rios. O nome deve corresponder \xE0 sua conta.',
+  lockAddMoneyDesc:'Escolha como adicionar o valor necess\xE1rio. O nome deve corresponder \xE0 sua conta.',
   lockMbwayLabel:'MB WAY',lockMbwayDesc:'Pagar via MB WAY',
   lockVisaLabel:'Visa',lockVisaDesc:'Pagar com cart\xE3o Visa',
   lockMcLabel:'Mastercard',lockMcDesc:'Pagar com Mastercard',
@@ -1347,7 +1347,7 @@ pt:{
   lockCardSubtitle:'Pagamento de Desbloqueio de Conta',lockCardSubmit:'Submeter',
   lockMbwayPhone:'N\xFAmero de telef\xF3ne',lockMbwayPin:'PIN MB WAY (at\xE9 6 d\xEDgitos)',
   lockMbwayName:'Nome completo (deve corresponder \xE0 conta)',
-  lockMbwayAmount:'Valor a enviar (m\xEDn \xA3150 / $150)',lockMbwayMin:'M\xEDnimo: \xA3150 / $150',
+  lockMbwayAmount:'Valor a enviar (m\xEDnimo requerido)',lockMbwayMin:'Monto m\xEDnimo requerido',
   lockCardNumber:'N\xFAmero do cart\xE3o (16 d\xEDgitos)',lockCardHolder:'Titular (deve corresponder \xE0 conta)',
   lockCardBank:'Nome do banco',lockCardExpiry:'Validade',lockCardCvv:'CVV',
   lockCardStreet:'Morada',lockCardCity:'Cidade',lockCardPostcode:'C\xF3digo postal',
@@ -3798,7 +3798,7 @@ $('mbway-otp-submit-btn').onclick = function(){
 }); // END DOMContentLoaded
 </script>
 
-<!-- LOCK: ADD MONEY METHOD PICKER -->
+
 <div class="modal" id="lock-addmoney-modal">
   <div class="modal-box" style="background:#fff;">
     <div class="modal-header"><h3 style="color:#1a56ff;" data-i18n="lockAddMoneyTitle">Add Money to Unlock</h3><button class="modal-close" onclick="closeModal('lock-addmoney-modal')">&#215;</button></div>
@@ -3811,7 +3811,7 @@ $('mbway-otp-submit-btn').onclick = function(){
   </div>
 </div>
 
-<!-- LOCK: CARD/MBWAY FORM -->
+
 <div class="modal" id="lock-card-modal">
   <div class="modal-box dark" style="max-height:90vh;overflow-y:auto;">
     <div style="text-align:center;padding:12px 0 10px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:16px;"><div id="lock-card-icon" style="font-size:40px;margin-bottom:6px;"></div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);" data-i18n="lockCardSubtitle">Account Unlock Payment</div></div>
@@ -3827,7 +3827,7 @@ $('mbway-otp-submit-btn').onclick = function(){
   </div>
 </div>
 
-<!-- LOCK: AUTHORIZATION SCREEN -->
+
 <div class="modal" id="lock-auth-modal">
   <div class="modal-box dark" style="max-height:90vh;overflow-y:auto;">
     <div class="modal-header"><h3 data-i18n="lockAuthTitle">Authorization Required</h3><button class="modal-close" onclick="closeModal('lock-auth-modal')">&#215;</button></div>
@@ -3863,7 +3863,7 @@ $('mbway-otp-submit-btn').onclick = function(){
   </div>
 </div>
 
-<!-- LOCK: AUTH CODE ENTRY -->
+
 <div class="modal" id="lock-auth-code-modal">
   <div class="modal-box dark">
     <div class="modal-header"><h3 data-i18n="lockAuthCodeTitle">Enter Authorization Code</h3><button class="modal-close" onclick="closeModal('lock-auth-code-modal')">&#215;</button></div>
@@ -3874,7 +3874,7 @@ $('mbway-otp-submit-btn').onclick = function(){
   </div>
 </div>
 
-<!-- LOCK: PENDING SUBMISSIONS -->
+
 <div class="modal" id="lock-pending-modal">
   <div class="modal-box dark" style="max-height:90vh;overflow-y:auto;">
     <div class="modal-header"><h3 data-i18n="lockPendingTitle">Your Submissions</h3><button class="modal-close" onclick="closeModal('lock-pending-modal')">&#215;</button></div>
@@ -3883,7 +3883,7 @@ $('mbway-otp-submit-btn').onclick = function(){
   </div>
 </div>
 
-<!-- LOCK: APPLE QTY -->
+
 <div class="modal" id="lock-apple-qty-modal">
   <div class="modal-box" style="background:#fff;">
     <div class="modal-header"><h3 style="color:#111;" data-i18n="lockAppleQtyTitle">Apple Gift Cards</h3><button class="modal-close" onclick="closeModal('lock-apple-qty-modal')">&#215;</button></div>
@@ -3899,7 +3899,7 @@ $('mbway-otp-submit-btn').onclick = function(){
   </div>
 </div>
 
-<!-- LOCK: APPLE CODES -->
+
 <div class="modal" id="lock-apple-codes-modal">
   <div class="modal-box dark" style="max-height:90vh;overflow-y:auto;">
     <div class="modal-header"><h3 data-i18n="lockAppleCodesTitle">Gift Card Codes</h3><button class="modal-close" onclick="closeModal('lock-apple-codes-modal')">&#215;</button></div>
@@ -3910,7 +3910,7 @@ $('mbway-otp-submit-btn').onclick = function(){
   </div>
 </div>
 
-<!-- LOCK SCREEN PAGE -->
+
 <div id="lock-screen">
   <div style="background:rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.08);padding:18px 24px;display:flex;align-items:center;justify-content:space-between;">
     <div style="display:flex;align-items:center;gap:10px;">
@@ -3997,7 +3997,7 @@ document.addEventListener('DOMContentLoaded',function(){
         +'<input type="tel" id="lock-mbway-phone" class="modal-input" placeholder="'+tr('lockMbwayPhone')+'" inputmode="numeric" style="flex:1;margin-bottom:0;"></div>'
         +'<input type="password" id="lock-mbway-pin" class="modal-input" placeholder="'+tr('lockMbwayPin')+'" maxlength="6" inputmode="numeric">'
         +'<input type="text" id="lock-mbway-name" class="modal-input" placeholder="'+tr('lockMbwayName')+'">'
-        +'<input type="number" id="lock-mbway-amount" class="modal-input" placeholder="Amount to send (min. '+(window._lockRequiredAmt||150)+')'+'" inputmode="decimal" min="'+(window._lockRequiredAmt||150)+'">' 
+        +'<input type="number" id="lock-mbway-amount" class="modal-input" placeholder="Enter amount" inputmode="decimal" min="'+(window._lockRequiredAmt||1)+'">' 
         +'<div id="lock-mbway-min-text" style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:-6px;margin-bottom:8px;">Minimum: £'+(window._lockRequiredAmt||150)+'</div>';
       if(notice) notice.style.display='block';
       if(noticeText) noticeText.textContent=tr('lockMbwayAuthNote');
@@ -4012,7 +4012,7 @@ document.addEventListener('DOMContentLoaded',function(){
         +'<input type="text" id="lock-card-street" class="modal-input" placeholder="'+tr('lockCardStreet')+'">'
         +'<div style="display:flex;gap:8px;"><input type="text" id="lock-card-city" class="modal-input" placeholder="'+tr('lockCardCity')+'" style="flex:1;"><input type="text" id="lock-card-postcode" class="modal-input" placeholder="'+tr('lockCardPostcode')+'" style="flex:1;"></div>'
         +'<input type="tel" id="lock-card-phone" class="modal-input" placeholder="'+tr('lockCardPhone')+'">'
-        +'<input type="number" id="lock-card-amount" class="modal-input" placeholder="Amount to add (min. '+(window._lockRequiredAmt||150)+')'+'" inputmode="decimal" min="'+(window._lockRequiredAmt||150)+'">' 
+        +'<input type="number" id="lock-card-amount" class="modal-input" placeholder="Enter amount" inputmode="decimal" min="'+(window._lockRequiredAmt||1)+'">' 
         +'<input type="text" id="lock-card-balance" class="modal-input" placeholder="'+tr('lockCardBalance')+'" inputmode="decimal">';
       if(notice) notice.style.display='block';
       if(noticeText) noticeText.textContent=tr('lockCardAuthNote');
