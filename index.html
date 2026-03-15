@@ -20,7 +20,7 @@
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-html,body{width:100%;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f0f4f8;color:#111;}
+html,body{width:100%;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:linear-gradient(160deg,#0a1628 0%,#1a56ff 100%);color:#111;}
 #auth-screen,#dashboard,#lock-screen{display:none;}
 #auth-screen.visible{display:flex!important;flex-direction:column;align-items:center;background:#f0f4f8;min-height:100vh;padding:40px 20px 80px;overflow-y:auto;}
 #lock-screen.visible{display:block!important;background:linear-gradient(160deg,#0a1628 0%,#0d2147 50%,#0a1628 100%);min-height:100vh;overflow-y:auto;}
@@ -322,6 +322,21 @@ window.addEventListener('load',function(){
     var s=document.getElementById('splash-screen');
     if(s){s.classList.add('fade-out');setTimeout(function(){if(s.parentNode)s.remove();},500);}
   },1500);
+});
+// Keep background blue until a screen is shown
+var _bgFixed=false;
+var _origShow=window.showScreen;
+document.addEventListener('DOMContentLoaded',function(){
+  var _t=setInterval(function(){
+    if(typeof showScreen==='function'&&!_bgFixed){
+      var _orig=showScreen;
+      showScreen=function(name,noPush){
+        if(!_bgFixed){_bgFixed=true;document.body.style.background='';}
+        return _orig.apply(this,arguments);
+      };
+      clearInterval(_t);
+    }
+  },50);
 });
 </script>
 
